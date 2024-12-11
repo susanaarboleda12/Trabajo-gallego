@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Enfermedades</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="/assets/img/Logo.jpg">
+    <style>
+        body {
+            background: url("/assets/img/virus.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        h3 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 3rem;
+            background: linear-gradient(45deg, #1065e3, #1065e3, #1065e3);
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+            animation: fadeInTitle 2s ease-in-out;
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #000000;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(5, 115, 226, 0.649);
+        }
+
+        @keyframes fadeInTitle {
+            0% { opacity: 0; transform: translateY(-30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-container {
+            background-color: rgba(173, 216, 230, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            color: #000000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 2px solid #1E90FF;
+            margin-bottom: 30px;
+        }
+
+        .form-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 2px solid #00BFFF;
+        }
+
+        footer {
+            background-color: transparent;
+            color: #000;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .col-md-6 {
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .text-center {
+                padding: 10px;
+            }
+        }
+
+        .form-check-label {
+            font-size: 1rem;
+            color: #000;
+        }
+
+        .btn-primary {
+            font-size: 1.2rem;
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 12px 20px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container my-4">
+        <div class="text-center">
+            <h3>Registro de Enfermedades</h3>
+        </div>
+        <div class="row justify-content-center align-items-center my-5">
+            <div class="col-12 col-md-8 form-container">
+                <h3>ENFERMEDADES</h3>
+                <form>
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="nombreenfermedad">
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">Sintomas:</label>
+                            <input type="text" class="form-control" id="sintomasenfermedad">
+                        </div>
+                    </div>
+
+                    <div class="row my-3">
+                        <div class="col-6">
+                            <label class="form-label">Clasificación:</label>
+                            <input type="text" class="form-control" id="clasificacionenfermedad">
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label">Grado:</label>
+                            <select class="form-select" id="gradoenfermedad">
+                                <option selected>Selecciona una opción</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row my-3">
+                        <div class="col-6">
+                            <label class="form-label">Probabilidad de vida:</label>
+                            <input type="text" class="form-control" id="probabilidaddevida">
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary w-100" type="submit" id="botonregistroenfermedad">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-3">
+        <p>&copy; Ritmo Vital 2024 - Encuentra tu medicamento</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="..//controllers/controladorenfermedad.js" type="module"></script>
+</body>
+</html>
